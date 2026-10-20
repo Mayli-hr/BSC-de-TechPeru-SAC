@@ -1,0 +1,40 @@
+BSC TECHPERU SAC — FRONTEND v4
+
+1. Descomprime TODO el ZIP.
+2. Entra a BSC_Frontend_v4 y abre index.html en Chrome o Edge actualizado.
+3. Pulsa Ingresar: admin@demo.com / BSC2026!
+
+El Excel ya está integrado: 12 objetivos, 36 indicadores y datos anuales de 2025.
+Resultado inicial: 84.2% (11 logrados, 19 en riesgo, 6 críticos).
+
+AÑOS Y CORTES:
+- Administración > Crear ejercicio: registra años pasados o futuros (2000–2099).
+- Copia la estructura sin resultados; copiar metas anuales es opcional.
+- Administración > Planificar metas: corte AAAA, AAAA-MM o AAAA-Q1.
+- Arriba, Período cambia de año y Corte cambia entre anual, meses y trimestres.
+- Las metas/resultados de cada año y corte son independientes.
+- No se reparten metas anuales ni se suman meses automáticamente.
+- Puedes cerrar y reabrir un ejercicio en Administración.
+
+SEGUIMIENTO:
+- Matriz BSC: todos los análisis y recomendaciones del Excel.
+- Ficha del indicador: brecha, metas e historial.
+- Registro de resultados: mediciones con su meta, notas y evidencias.
+- Planes de acción: responsables, fechas, actividades, avance y bitácora.
+- Reportes: filtros, CSV, Excel y PDF mediante impresión.
+
+PARA ACTUALIZAR DESDE EXCEL:
+- Edita Meta y Real en BSC Completo; conserva la estructura original.
+- Pulsa Cargar Excel, revisa los cambios y confirma.
+- Actualizar conserva historial y planes. Reemplazar SOLO este ejercicio los descarta para ese año.
+- Los demás ejercicios permanecen guardados.
+
+PARA CONSERVAR TU TRABAJO:
+- Administración > Descargar respaldo ZIP con evidencias.
+- Ese ZIP contiene TODOS los años y archivos adjuntos y puede restaurarse.
+- El JSON guarda los datos pero no los archivos de evidencia.
+
+No necesitas Internet ni instalar programas.
+Esta entrega es FRONTEND con guardado local en el navegador.
+El backend Spring Boot con arquitectura de capas es la siguiente etapa.
+Consulta README.md y docs/ para el detalle.

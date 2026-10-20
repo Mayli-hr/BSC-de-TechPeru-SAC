@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechPeru BSC | Gestión y seguimiento</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/features.css">
+  <script src="js/vendor/chart.umd.min.js" defer></script>
+  <script src="js/excel.js" defer></script>
+  <script src="js/datos-techperu.js" defer></script>
+  <script src="js/vendor/jszip.min.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/export.js" defer></script>
+  <script src="js/features.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div id="loginView" class="login-wrap">
+    <div class="login-card">
+      <div class="brand brand-login"><span class="brand-mark">B</span><div><strong>BSC</strong><small>Gestión estratégica</small></div></div>
+      <h1>Bienvenido</h1><p class="muted">Ingresa al espacio de gestión estratégica de tu organización.</p>
+      <form id="loginForm">
+        <label>Usuario<input id="loginUser" autocomplete="username" value="admin@demo.com" required></label>
+        <label>Contraseña<input id="loginPass" type="password" autocomplete="current-password" value="BSC2026!" required></label>
+        <p id="loginError" class="error-text hidden">Credenciales incorrectas.</p>
+        <button class="btn primary full" type="submit">Ingresar al sistema <span>→</span></button>
+      </form>
+      <div class="demo-note"><strong>Acceso de demostración</strong><br>admin@demo.com / BSC2026!<br>gerente@demo.com / BSC2026!<br>responsable@demo.com / BSC2026!</div>
+      <small class="muted">TechPeru SAC · Datos del Excel 2025</small>
+    </div>
+    <div class="login-art"><div class="art-orbit orbit1"></div><div class="art-orbit orbit2"></div><div class="art-content"><span class="eyebrow">ESTRATEGIA · MEDICIÓN · RESULTADOS</span><h2>Convierte la estrategia<br>en resultados medibles.</h2><p>Conecta objetivos, indicadores e iniciativas en un solo lugar.</p><div class="art-stats"><div><b>4</b><small>Perspectivas</small></div><div><b>360°</b><small>Visión estratégica</small></div><div><b>1</b><small>Equipo alineado</small></div></div></div></div>
+  </div>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-mark">B</span><div><strong>BSC</strong><small>Strategic performance</small></div><button id="sidebarClose" class="icon-btn mobile-only" aria-label="Cerrar menú">×</button></div>
+      <div class="org-switch"><span class="org-icon">T</span><div><strong>TechPeru SAC</strong><small>BSC · Datos del Excel</small></div></div>
+      <nav id="mainNav" aria-label="Navegación principal">
+        <div class="nav-label">ESPACIO DE TRABAJO</div>
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span>Dashboard ejecutivo</button>
+        <button class="nav-item" data-page="perspectivas"><span class="nav-icon">◫</span>Perspectivas</button>
+        <button class="nav-item" data-page="mapa"><span class="nav-icon">⌘</span>Mapa estratégico</button>
+        <button class="nav-item" data-page="objetivos"><span class="nav-icon">◎</span>Objetivos estratégicos</button>
+        <button class="nav-item" data-page="kpis"><span class="nav-icon">▥</span>Indicadores (KPI)</button>
+        <button class="nav-item" data-page="matriz"><span class="nav-icon">▤</span>Matriz BSC completa</button>
+        <button class="nav-item" data-page="mediciones"><span class="nav-icon">↗</span>Registro de resultados</button>
+        <button class="nav-item" data-page="iniciativas"><span class="nav-icon">◈</span>Planes de acción</button>
+        <div class="nav-label">ANÁLISIS Y CONTROL</div>
+        <button class="nav-item" data-page="reportes"><span class="nav-icon">▤</span>Reportes</button>
+        <button class="nav-item" data-page="administracion"><span class="nav-icon">⚙</span>Administración</button>
+      </nav>
+      <div class="sidebar-bottom"><button class="help-card" id="helpBtn" type="button"><span class="help-icon">?</span><div><strong>¿Necesitas ayuda?</strong><small>Guía y reglas del BSC</small></div></button><div class="sidebar-user"><div class="avatar">AP</div><div class="user-meta"><strong id="sideUserName">Ana Pérez</strong><small id="sideUserRole">Administradora</small></div><button id="logoutBtn" class="logout" title="Cerrar sesión">↪</button></div></div>
+    </aside>
+    <div class="main-column">
+      <header class="topbar"><button id="menuToggle" class="icon-btn mobile-only" aria-label="Abrir menú">☰</button><div class="breadcrumb"><span>TechPeru SAC</span><span class="crumb-sep">/</span><strong id="breadcrumbPage">Dashboard ejecutivo</strong></div><div class="top-actions"><label class="period-select">Período <select id="globalPeriod" aria-label="Ejercicio anual"><option>2025</option></select></label><label class="period-select">Corte <select id="globalCut" aria-label="Corte de evaluación"></select></label><button id="notificationsBtn" class="icon-btn notification-btn" title="Notificaciones">♧<i id="notificationDot"></i></button><div class="top-profile"><div class="avatar small-avatar">AP</div><div><strong id="topUserName">Ana Pérez</strong><small id="topUserRole">Administradora</small></div></div></div></header>
+      <main id="pageContent" tabindex="-1"></main>
+      <footer class="app-footer"><span>BSC · Gestión estratégica</span><span><span id="sourceSummary">TechPeru SAC · 2025</span></span></footer>
+    </div>
+  </div>
+
+  <div id="modalLayer" class="modal-layer hidden" role="presentation"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><header class="modal-header"><div><span class="eyebrow" id="modalEyebrow">FORMULARIO</span><h2 id="modalTitle">Nuevo registro</h2></div><button id="modalClose" class="icon-btn" aria-label="Cerrar">×</button></header><div id="modalBody" class="modal-body"></div><footer id="modalFooter" class="modal-footer"></footer></section></div>
+  <input id="excelFile" type="file" accept=".xlsx" hidden>
+  <input id="backupFile" type="file" accept=".zip,.json" hidden>
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+</body>
+</html>
